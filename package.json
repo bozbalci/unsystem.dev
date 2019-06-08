@@ -1,15 +1,16 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "unsystem",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Personal blog of Berk Özbalcı",
+  "version": "1.0.0",
+  "author": "Berk Özbalcı <berkozbalci@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/bozbalci/unsystem.dev/issues"
   },
   "dependencies": {
     "gatsby": "^2.8.5",
     "gatsby-image": "^2.1.2",
+    "gatsby-plugin-catch-links": "^2.0.15",
     "gatsby-plugin-feed": "^2.2.2",
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -25,20 +26,22 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
+    "moment": "^2.24.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "styled-components": "^4.3.1",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-lawton": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.18.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://unsystem.dev",
   "keywords": [
     "gatsby"
   ],
@@ -46,7 +49,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/bozbalci/unsystem.dev.git"
   },
   "scripts": {
     "build": "gatsby build",

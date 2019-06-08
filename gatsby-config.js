@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `unsystem`,
+    author: `Berk Özbalcı`,
+    description: `I'm a software engineer and musician. This is my blog.`,
+    siteUrl: `https://unsystem.dev/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `bozbalci`,
+      github: `bozbalci`,
+      email: `me@unsystem.dev`
     },
   },
   plugins: [
@@ -50,20 +52,75 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-49163162-2`,
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                const siteUrl = site.siteMetadata.siteUrl;
+
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                });
+              });
+            },
+            query: `
+             {
+               allMarkdownRemark(
+                 sort: { order: DESC, fields: [frontmatter___date] },
+               ) {
+                 edges {
+                   node {
+                     excerpt
+                     html
+                     fields { slug }
+                     frontmatter {
+                       title
+                       date
+                     }
+                   }
+                 }
+               }
+             }
+           `,
+            output: `/rss.xml`,
+            title: `unsystem RSS feed`,
+          },
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `unsystem`,
+        short_name: `unsystem`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#f0f8ff`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
+        theme_color_in_head: false,
       },
     },
     `gatsby-plugin-offline`,
@@ -74,5 +131,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-catch-links`
   ],
-}
+};
