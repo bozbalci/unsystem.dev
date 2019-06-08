@@ -1,7 +1,7 @@
 import Typography from "typography";
 import Lawton from "typography-theme-lawton";
 
-import './unsystem.css'
+import "./unsystem.css";
 
 Lawton.overrideThemeStyles = () => {
   return {

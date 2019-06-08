@@ -15,29 +15,29 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={''} />
-        <Bio/>
-        <div
+        <SEO title={""} />
+        <aside>
+          <Bio />
+        </aside>
+        <ul
+          className="posts"
           style={{
-            marginBottom: rhythm(1.25),
+            marginTop: rhythm(1),
           }}
         >
-          <ul className="posts">
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug;
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
 
-              return (
-                <li key={node.fields.slug}
-                    data-date={formatDate(node.frontmatter.date)}
-                >
-                  <Link to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+            return (
+              <li
+                key={node.fields.slug}
+                data-date={formatDate(node.frontmatter.date)}
+              >
+                <Link to={node.fields.slug}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
       </Layout>
     );
   }

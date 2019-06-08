@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
 
-export default function BackToBlog() {
+const BackToBlog = () => {
   return (
     <Link to="/">
-      <span role="img" aria-label="back">⬅️</span>
+      <span role="img" aria-label="back">
+        ⬅️
+      </span>{" "}
       Back to blog
     </Link>
   );
-}
+};
 
-
-
+export default BackToBlog;
