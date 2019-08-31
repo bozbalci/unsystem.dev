@@ -5,7 +5,6 @@ import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { formatDate } from "../utils/helpers";
-import { rhythm } from "../utils/typography";
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,23 +15,16 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={""} />
-        <aside>
-          <Bio />
-        </aside>
-        <ul
-          className="posts"
-          style={{
-            marginTop: rhythm(1),
-          }}
-        >
+        <Bio />
+        <ul className="post-list">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
 
             return (
-              <li
-                key={node.fields.slug}
-                data-date={formatDate(node.frontmatter.date)}
-              >
+              <li key={node.fields.slug}>
+                <span className="post-date">
+                  {formatDate(node.frontmatter.date)}
+                </span>
                 <Link to={node.fields.slug}>{title}</Link>
               </li>
             );

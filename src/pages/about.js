@@ -4,7 +4,6 @@ import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm } from "../utils/typography";
 
 class About extends React.Component {
   render() {
@@ -20,21 +19,13 @@ class About extends React.Component {
             <header>
               <h1>About</h1>
             </header>
-            <div
-              style={{
-                margin: `${rhythm(1)} auto`,
-                width: 150,
-                textAlign: `center`,
-              }}
-            >
+            <div className="pp">
               <Image
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author}
-                imgStyle={{
-                  borderRadius: `100%`,
-                }}
+                className="pp-image"
               />
-              <small>Me, circa 2013</small>
+              <span className="pp-caption">Me, circa 2013</span>
             </div>
             <p>
               Hi. I'm Berk Özbalcı, a software engineer living in Ankara,
@@ -63,12 +54,7 @@ class About extends React.Component {
               conceivably two ways to break the word "unsystematic" into its
               morphemes:
             </p>
-            <div
-              style={{
-                margin: `0 auto ${rhythm(1 / 2)}`,
-                width: 300,
-              }}
-            >
+            <div className="unsystematic-trees">
               <Image
                 fixed={data.parse1.childImageSharp.fixed}
                 alt={"unsystem + atic"}

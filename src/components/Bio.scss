@@ -1,0 +1,12 @@
+.bio {
+  display: flex;
+
+  .gatsby-image-wrapper {
+    margin-right: 0.75rem;
+    min-width: 50px;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+}

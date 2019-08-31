@@ -1,0 +1,149 @@
+@import "normalize.css";
+
+@import "theme-variables";
+@import "night-owl-syntax";
+
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Raleway:800&display=swap");
+
+body {
+  background-color: $bg-light;
+  color: hsla(0, 0%, 0%, 0.8);
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-kerning: normal;
+  line-height: 1.5rem;
+}
+
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $measure;
+}
+
+.stack {
+  --space: 1.5rem;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+.layout {
+  @extend .center;
+
+  .content {
+    @extend .stack;
+  }
+
+  background-color: $bg-lightest;
+  border-radius: 16px;
+  margin-top: 0.75rem;
+  padding: 0 1.125rem 1.125rem;
+}
+
+h1.title {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  .post-date {
+    margin-right: 0.5rem;
+    color: $secondary;
+    font-family: monospace;
+    font-size: 1.25rem;
+  }
+}
+
+.pp {
+  margin: 1.5rem auto;
+  width: 150px;
+  text-align: center;
+
+  .pp-image img {
+    border-radius: 100%;
+  }
+
+  .pp-caption {
+    font-size: 0.8rem;
+  }
+}
+
+.unsystematic-trees {
+  margin: 0 auto 0.75rem;
+  width: 300px;
+}
+
+header {
+  p {
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+a {
+  font-weight: bold;
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  color: hsla(0, 0%, 0%, 1);
+}
+
+p {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  background-color: hsla(0, 0%, 0%, 0.2);
+  height: 1px;
+  border: none;
+}
+
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}

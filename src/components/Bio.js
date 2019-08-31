@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 
-import { rhythm } from "../utils/typography";
+import "./Bio.scss";
 
 const Bio = () => {
   const { avatar, site } = useStaticQuery(graphql`
@@ -24,17 +24,7 @@ const Bio = () => {
 
   const { author } = site.siteMetadata;
 
-  const image = (
-    <Image
-      fixed={avatar.childImageSharp.fixed}
-      alt={author}
-      style={{
-        marginRight: rhythm(1 / 2),
-        minWidth: 50,
-        borderRadius: `100%`,
-      }}
-    />
-  );
+  const image = <Image fixed={avatar.childImageSharp.fixed} alt={author} />;
 
   const bioText = (
     <p>
@@ -44,14 +34,10 @@ const Bio = () => {
   );
 
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
+    <aside className="bio">
       {image}
       {bioText}
-    </div>
+    </aside>
   );
 };
 

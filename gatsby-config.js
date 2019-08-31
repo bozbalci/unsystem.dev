@@ -7,7 +7,7 @@ module.exports = {
     social: {
       twitter: `bozbalci`,
       github: `bozbalci`,
-      email: `me@unsystem.dev`
+      email: `me@unsystem.dev`,
     },
   },
   plugins: [
@@ -72,7 +72,7 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
 
@@ -107,8 +107,8 @@ module.exports = {
             output: `/rss.xml`,
             title: `unsystem RSS feed`,
           },
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -125,12 +125,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    `gatsby-plugin-catch-links`
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-sass`,
   ],
 };

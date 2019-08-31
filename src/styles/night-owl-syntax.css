@@ -1,26 +1,3 @@
-body {
-  background-color: aliceblue;
-}
-
-.posts {
-  list-style: none;
-  margin: 0;
-}
-
-.posts li {
-  position: relative;
-  padding-left: 6.25rem;
-}
-
-.posts li:before {
-  display: inline-block;
-  content: attr(data-date);
-  width: 6.25rem;
-  position: absolute;
-  left: 0;
-  color: #c2bbf0;
-}
-
 /**
  * Based on copypasta from Remy Bach and Sarah Drasner
  */
