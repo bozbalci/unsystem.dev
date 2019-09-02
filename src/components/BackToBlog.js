@@ -3,12 +3,14 @@ import { Link } from "gatsby";
 
 const BackToBlog = () => {
   return (
-    <Link to="/">
-      <span role="img" aria-label="back">
-        ⬅️
-      </span>{" "}
-      Back to blog
-    </Link>
+    <nav>
+      <Link to="/">
+        <span role="img" aria-label="back">
+          ⬅️
+        </span>{" "}
+        Back to blog
+      </Link>
+    </nav>
   );
 };
 

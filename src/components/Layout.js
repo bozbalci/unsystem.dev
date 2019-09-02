@@ -1,30 +1,22 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import Footer from "./Footer";
 import BackToBlog from "./BackToBlog";
 
-import "../styles/global.scss";
+import "../styles/unsystem.scss";
+import Title from "./Title";
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props;
+    const { location, children } = this.props;
     const isRoot = location.pathname === `${__PATH_PREFIX__}/`;
 
     return (
-      <div className="layout">
-        <div className="content">
-          <header>
-            <h1 className="title">
-              <Link to={`/`}>{title}</Link>
-            </h1>
-          </header>
+      <div className="layout center">
+        <div className="content stack">
+          <Title />
           {children}
-          {isRoot ? null : (
-            <nav>
-              <BackToBlog />
-            </nav>
-          )}
+          {isRoot ? null : <BackToBlog />}
           <Footer />
         </div>
       </div>

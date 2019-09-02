@@ -1,7 +1,7 @@
-@import "normalize.css";
+@import "resets/normalize.css";
 
 @import "theme-variables";
-@import "night-owl-syntax";
+@import "syntax/night-owl.css";
 
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Raleway:800&display=swap");
 
@@ -22,7 +22,7 @@ body {
 }
 
 .stack {
-  --space: 1.5rem;
+  --space: var(--s1);
 }
 
 .stack > * {
@@ -35,31 +35,11 @@ body {
 }
 
 .layout {
-  @extend .center;
-
-  .content {
-    @extend .stack;
-  }
-
   background-color: $bg-lightest;
   border-radius: 16px;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   padding: 0 1.125rem 1.125rem;
-}
-
-h1.title {
-  padding-top: 1rem;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-
-  a {
-    color: inherit;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 .post-list {
@@ -123,7 +103,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--s0);
   padding: 0;
 
   *:last-child {
@@ -137,6 +117,7 @@ hr {
   border: none;
 }
 
+// Horizontal navigation bars
 nav > ul {
   display: flex;
   flex-wrap: wrap;
@@ -146,5 +127,5 @@ nav > ul {
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--s-1);
 }
