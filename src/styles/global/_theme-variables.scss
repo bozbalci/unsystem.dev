@@ -1,0 +1,23 @@
+// Text measure
+$measure: 60ch;
+
+// Colors
+$bg-light: #f0f8ff;
+$bg-lightest: #ffffff;
+$primary: #0000ff;
+$secondary: #c2bbf0;
+
+// Modular scale
+
+$ratio: 1.25;
+$s0: 1rem;
+$s-1: $s0 / $ratio;
+$s-2: $s-1 / $ratio;
+$s-3: $s-2 / $ratio;
+$s-4: $s-3 / $ratio;
+$s-5: $s-4 / $ratio;
+$s1: $s0 * $ratio;
+$s2: $s1 * $ratio;
+$s3: $s2 * $ratio;
+$s4: $s3 * $ratio;
+$s5: $s4 * $ratio;

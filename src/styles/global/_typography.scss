@@ -1,0 +1,46 @@
+body {
+  color: hsla(0, 0%, 0%, 0.8);
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+p {
+  margin: 0 0 $s0;
+  padding: 0;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin-bottom: $s-1;
+}
+
+hr {
+  background-color: hsla(0, 0%, 0%, 0.2);
+  height: 1px;
+  border: none;
+}
+
+a {
+  font-weight: bold;
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  color: hsla(0, 0%, 0%, 1);
+}

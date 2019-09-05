@@ -21,7 +21,9 @@ class BlogPostTemplate extends React.Component {
           <article>
             <header>
               <h1>{post.frontmatter.title}</h1>
-              <p>{formatDate(post.frontmatter.date)}</p>
+              <p className="post-subtitle">
+                {formatDate(post.frontmatter.date)}
+              </p>
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
@@ -29,7 +31,7 @@ class BlogPostTemplate extends React.Component {
         <Bio />
         {(previous || next) && (
           <nav>
-            <ul>
+            <ul className="post-nav-list">
               <li>
                 {previous && (
                   <Link to={previous.fields.slug} rel="prev">

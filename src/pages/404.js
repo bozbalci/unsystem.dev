@@ -3,16 +3,18 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-class NotFoundPage extends React.Component {
-  render() {
-    return (
-      <Layout location={this.props.location}>
-        <SEO title="404: Not Found" />
+const NotFoundPage = () => (
+  <Layout location={this.props.location}>
+    <SEO title="Not Found" />
+    <main>
+      <header>
         <h1>Not Found</h1>
-        <p>You've reached the end of The Interwebs.</p>
-      </Layout>
-    );
-  }
-}
+      </header>
+      <article>
+        <p>You have reached the end of The Interwebs.</p>
+      </article>
+    </main>
+  </Layout>
+);
 
 export default NotFoundPage;

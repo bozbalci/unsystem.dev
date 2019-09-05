@@ -1,0 +1,13 @@
+@import "../styles/partials/theme-variables";
+
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  .post-date {
+    margin-right: 0.5rem;
+    color: $secondary;
+    font-family: monospace;
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../styles/partials/theme-variables";
+
+.layout {
+  background-color: $bg-lightest;
+  border-radius: 16px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0 1.125rem 1.125rem;
+}

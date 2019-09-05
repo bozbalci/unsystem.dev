@@ -1,57 +1,16 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { formatDate } from "../utils/helpers";
+import PostList from "../components/PostList";
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    const posts = data.allMarkdownRemark.edges;
-
-    return (
-      <Layout location={this.props.location}>
-        <SEO title={""} />
-        <Bio />
-        <ul className="post-list">
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-
-            return (
-              <li key={node.fields.slug}>
-                <span className="post-date">
-                  {formatDate(node.frontmatter.date)}
-                </span>
-                <Link to={node.fields.slug}>{title}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </Layout>
-    );
-  }
-}
+const BlogIndex = ({ location }) => (
+  <Layout location={location}>
+    <SEO title={""} />
+    <Bio />
+    <PostList />
+  </Layout>
+);
 
 export default BlogIndex;
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`;

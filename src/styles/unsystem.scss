@@ -1,57 +1,15 @@
 @import "resets/normalize.css";
 
-@import "theme-variables";
+@import "global/theme-variables";
+@import "global/typography";
+@import "global/layout";
+
 @import "syntax/night-owl.css";
 
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Raleway:800&display=swap");
 
 body {
   background-color: $bg-light;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-kerning: normal;
-  line-height: 1.5rem;
-}
-
-.center {
-  box-sizing: content-box;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $measure;
-}
-
-.stack {
-  --space: var(--s1);
-}
-
-.stack > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.stack > * + * {
-  margin-top: var(--space);
-}
-
-.layout {
-  background-color: $bg-lightest;
-  border-radius: 16px;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  padding: 0 1.125rem 1.125rem;
-}
-
-.post-list {
-  list-style: none;
-  padding: 0;
-
-  .post-date {
-    margin-right: 0.5rem;
-    color: $secondary;
-    font-family: monospace;
-    font-size: 1.25rem;
-  }
 }
 
 .pp {
@@ -73,59 +31,17 @@ body {
   width: 300px;
 }
 
-header {
-  p {
-    margin-top: -0.75rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5rem;
-  }
-}
-
-a {
-  font-weight: bold;
-  color: $primary;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  color: hsla(0, 0%, 0%, 1);
-}
-
-p {
-  margin: 0 0 var(--s0);
-  padding: 0;
-
-  *:last-child {
-    margin-bottom: 0;
-  }
-}
-
-hr {
-  background-color: hsla(0, 0%, 0%, 0.2);
-  height: 1px;
-  border: none;
+.post-subtitle {
+  margin-top: -$s-1;
+  margin-bottom: $s1;
+  line-height: $s1;
 }
 
 // Horizontal navigation bars
-nav > ul {
+.post-nav-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
   padding: 0;
-}
-
-li {
-  margin-bottom: var(--s-1);
 }

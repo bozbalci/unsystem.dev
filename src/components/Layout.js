@@ -1,10 +1,11 @@
 import React from "react";
 
-import Footer from "./Footer";
 import BackToBlog from "./BackToBlog";
+import Footer from "./Footer";
+import Title from "./Title";
 
 import "../styles/unsystem.scss";
-import Title from "./Title";
+import "./Layout.scss";
 
 class Layout extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class Layout extends React.Component {
         <div className="content stack">
           <Title />
           {children}
-          {isRoot ? null : <BackToBlog />}
+          {!isRoot ? <BackToBlog /> : null}
           <Footer />
         </div>
       </div>
