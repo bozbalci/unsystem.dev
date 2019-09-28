@@ -3,8 +3,8 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const NotFoundPage = () => (
-  <Layout location={this.props.location}>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Not Found" />
     <main>
       <header>
