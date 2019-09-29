@@ -73,7 +73,7 @@ in Safari:
 Get Query from Shortcut Input,
 Get Value for v in Component of URL,
 URL: censored, "youtube-dl/YouTube Video ID"
-Get contents of URL.](./tublex_shortcut.jpg)
+Get contents of URL.](tublex_shortcut.jpg)
 
 In just two clicks, you can download any YouTube video into your Plex server.
 
